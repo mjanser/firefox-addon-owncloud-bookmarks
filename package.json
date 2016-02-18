@@ -1,0 +1,46 @@
+{
+  "title": "ownCloud Bookmarks",
+  "name": "owncloud-bookmarks",
+  "version": "0.0.1",
+  "description": "Add-on for syncing bookmarks with ownCloud.",
+  "main": "index.js",
+  "author": "Martin Janser",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "GPL",
+  "keywords": [
+    "owncloud",
+    "bookmarks",
+    "sync"
+  ],
+  "preferences": [{
+    "name": "url",
+    "title": "URL",
+    "type": "string",
+    "value": "https://"
+  },
+  {
+    "name": "username",
+    "title": "USername",
+    "type": "string"
+  },
+  {
+    "name": "group",
+    "title": "Folder",
+    "type": "string",
+    "value": "ownCloud Bookmarks"
+  },
+  {
+    "name": "interval",
+    "title": "Interval",
+    "type": "integer",
+    "value": 15
+  },
+  {
+      "name": "sync",
+      "title": "Synchronize",
+      "type": "control",
+      "label": "Synchronize now!"
+  }]
+}
