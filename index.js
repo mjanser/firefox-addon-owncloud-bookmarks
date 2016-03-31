@@ -64,7 +64,10 @@ function whenReady(callback) {
 function syncBookmarks(ownCloudBookmarks, group) {
     // Remove bookmarks
     search({ group: group }).on("end", function (results) {
-        save(remove(results)).on("end", function () {
+        var oldBookmarks = results.filter(function (item) {
+            return item.type == "bookmark" && item.group == group;
+        });
+        save(remove(oldBookmarks)).on("end", function () {
             // Add bookmarks
             let bookmarks = [];
             ownCloudBookmarks.forEach(function (ownCloudBookmark) {
