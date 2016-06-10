@@ -65,7 +65,7 @@ function syncBookmarks(ownCloudBookmarks, group) {
     // Remove bookmarks
     search({ group: group }).on("end", function (results) {
         var oldBookmarks = results.filter(function (item) {
-            return item.type == "bookmark" && item.group == group;
+            return item.type == "bookmark" && item.group.id == group.id;
         });
         save(remove(oldBookmarks)).on("end", function () {
             // Add bookmarks
