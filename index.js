@@ -95,10 +95,11 @@ function syncBookmarks(username, password, group) {
                     var tags = ownCloudBookmark.tags.filter(function (tag) {
                         return tag != "";
                     });
+                    var url = decodeURI(ownCloudBookmark.url);
 
                     let bookmark = Bookmark({
-                        title: ownCloudBookmark.title,
-                        url: decodeURI(ownCloudBookmark.url),
+                        title: ownCloudBookmark.title || url,
+                        url: url,
                         tags: tags,
                         group: group
                     });
