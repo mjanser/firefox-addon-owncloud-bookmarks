@@ -67,7 +67,7 @@ function getGroup(callback) {
 function getBookmarks(username, password) {
     var deferred = defer();
     var bookmarksRequest = Request({
-        url: preferences.url + "/index.php/apps/bookmarks/public/rest/v1/bookmark?user=" + username + "&password=" + password + "&select[0]=tags&select[1]=description",
+        url: preferences.url + "/index.php/apps/bookmarks/public/rest/v1/bookmark?user=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password) + "&select[0]=tags&select[1]=description",
         onComplete: function (response) {
             if (200 == response.status) {
                 console.log("fetched "+response.json.length+" bookmarks from "+preferences.url);
