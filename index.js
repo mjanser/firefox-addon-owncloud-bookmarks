@@ -36,7 +36,7 @@ function searchCredentials() {
     return deferred.promise;
 }
 
-function getGroup(callback) {
+function getGroup() {
     var deferred = defer();
     search({ type: "group", group: MENU, title: preferences.group }).on("end", function (results) {
         var group;
@@ -51,7 +51,6 @@ function getGroup(callback) {
             console.log("creating new bookmark group: "+preferences.group);
             group = Group({ title: preferences.group, group: MENU });
             save(group).on("end", function () {
-                callback(group);
                 deferred.resolve(group);
             }).on("error", function (error) {
                 deferred.reject(error);
