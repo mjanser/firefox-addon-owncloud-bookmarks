@@ -1,4 +1,7 @@
 # ownCloud Bookmarks
+
+**Warning**: This add-on is deprecated in favor of https://addons.mozilla.org/de/firefox/addon/floccus.
+
 Add-on for syncing bookmarks with ownCloud.
 
 For now the synchronization is only one-way, from ownCloud to Firefox.
